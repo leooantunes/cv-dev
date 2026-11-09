@@ -18,7 +18,7 @@ export function Experience() {
             <h3 className="mt-1 text-xl font-semibold">
               {e.role} <span className="text-accent">@ {e.company}</span>
             </h3>
-            <p className="mt-2 max-w-3xl text-muted">{e.description}</p>
+            {e.description && <p className="mt-2 max-w-3xl text-muted">{e.description}</p>}
             {e.stack && (
               <ul className="mt-3 flex flex-wrap gap-1.5 font-mono text-[11px]">
                 {e.stack.map((s) => (

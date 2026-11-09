@@ -7,6 +7,7 @@ const links = [
   { href: "#sobre", label: "sobre.md", color: "text-yellow" },
   { href: "#stack", label: "stack.json", color: "text-orange" },
   { href: "#projetos", label: "projetos.ts", color: "text-accent-2" },
+  { href: "#experiencia", label: "experiencia.log", color: "text-yellow" },
   { href: "#contato", label: "contato.sh", color: "text-accent" },
 ];
 

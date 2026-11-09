@@ -8,7 +8,7 @@ export type Experience = {
   company: string;
   period: string; // ex: "jan 2023 — atual"
   location?: string;
-  description: string;
+  description?: string;
   stack?: string[];
 };
 
@@ -18,22 +18,31 @@ export type Education = {
   period: string;
 };
 
+export type Certification = {
+  name: string;
+  issuer?: string;
+  url?: string;
+};
+
 export const profile = {
   name: "Leonardo Antunes",
   nickname: "Léo Antunes",
-  role: "Front-End Developer",
+  role: "React & React Native Developer",
+  headline: "Front-end · Apps Mobile e Web · Foco em Performance e Experiência do Usuário",
+  // Exibido no topo como "anos de experiência" — atualize quando quiser
+  yearsOfExperience: "6+",
   location: "Aracaju, Sergipe — Brasil",
   githubUser: "leooantunes",
   // Texto da seção "sobre". Cada item vira um parágrafo.
   about: [
-    "Oi! Me chamo Léo Antunes, sou desenvolvedor Front-End apaixonado por criar interfaces bonitas, rápidas e fáceis de usar.",
-    "Trabalho principalmente com o ecossistema JavaScript/TypeScript — React, Next.js e React Native — e também me aventuro no back-end com Node.js e Java (Spring Boot).",
-    "Gosto de projetos com arquitetura bem pensada, código limpo e aquela atenção aos detalhes que faz a experiência do usuário brilhar.",
+    "Desenvolvedor Front-end com foco em construção de interfaces modernas, performáticas e centradas no usuário.",
+    "Atuo com React.js e React Native, desenvolvendo aplicações web e mobile com atenção à experiência do usuário (UX), organização de código e boas práticas de desenvolvimento.",
+    "Tenho interesse em transformar ideias em produtos reais, criando interfaces intuitivas, responsivas e eficientes. Busco constantemente evoluir minhas habilidades em JavaScript, TypeScript e no ecossistema React.",
   ],
   socials: {
     github: "https://github.com/leooantunes",
     linkedin: "https://www.linkedin.com/in/leooantunes/",
-    email: "", // ex: "voce@email.com" — deixe vazio para ocultar
+    email: "leoantunes-n@outlook.com", // deixe vazio para ocultar
   },
   // Caminho de um PDF em /public (ex: "/curriculo.pdf") — deixe vazio para ocultar
   resumeUrl: "",
@@ -42,7 +51,7 @@ export const profile = {
 export const stack: { group: string; items: string[] }[] = [
   {
     group: "frontend",
-    items: ["JavaScript", "TypeScript", "React", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
+    items: ["JavaScript (ES6+)", "TypeScript", "React", "Next.js", "AngularJS", "HTML5", "CSS3", "Tailwind CSS"],
   },
   {
     group: "mobile",
@@ -50,11 +59,11 @@ export const stack: { group: string; items: string[] }[] = [
   },
   {
     group: "state & data",
-    items: ["Redux", "Zustand", "React Query"],
+    items: ["Redux", "Context API", "Zustand", "React Query", "APIs REST"],
   },
   {
     group: "backend",
-    items: ["Node.js", "Java", "Spring Boot", "C#", "REST APIs"],
+    items: ["Node.js", "Java", "Spring Boot", "C#"],
   },
   {
     group: "tools",
@@ -67,17 +76,59 @@ export const stack: { group: string; items: string[] }[] = [
  * A seção só aparece se houver pelo menos um item.
  */
 export const experiences: Experience[] = [
-  // {
-  //   role: "Desenvolvedor Front-End",
-  //   company: "Empresa X",
-  //   period: "jan 2023 — atual",
-  //   location: "Remoto",
-  //   description: "Desenvolvimento de interfaces em React e Next.js...",
-  //   stack: ["React", "TypeScript", "Next.js"],
-  // },
+  {
+    role: "Engenheiro de Software Sênior",
+    company: "Zallpy Digital",
+    period: "ago 2026 — atual",
+  },
+  {
+    role: "Desenvolvedor Front-End",
+    company: "CWI Software",
+    period: "ago 2021 — fev 2026",
+    location: "Aracaju, SE",
+  },
+  {
+    role: "Desenvolvedor Front-End",
+    company: "Stefanini Brasil",
+    period: "abr 2021 — ago 2021",
+  },
+  {
+    role: "Desenvolvedor Front-End",
+    company: "Protech Solutions — Consultoria & Sistemas",
+    period: "out 2020 — abr 2021",
+    location: "Brasil",
+  },
+  {
+    role: "Estagiário Front-End",
+    company: "Protech Solutions — Consultoria & Sistemas",
+    period: "mar 2020 — set 2020",
+    location: "Aracaju, SE",
+  },
+  {
+    role: "Bolsista CNPq",
+    company: "Universidade Federal de Sergipe — UFS",
+    period: "ago 2018 — jul 2019",
+    location: "São Cristóvão, SE",
+    description:
+      "Bolsa CNPq para desenvolvimento de aplicativo de funções sonoras baseadas no software Matlab.",
+  },
+  {
+    role: "Desenvolvedor Front-End Angular",
+    company: "SofTeam | Empresa Júnior de Computação",
+    period: "abr 2015 — set 2016",
+    location: "Aracaju, SE",
+    stack: ["AngularJS"],
+  },
 ];
 
 /** Formação acadêmica. A seção só aparece se houver pelo menos um item. */
 export const education: Education[] = [
-  // { course: "Sistemas de Informação", institution: "Universidade X", period: "2018 — 2022" },
+  {
+    course: "Ciência da Computação",
+    institution: "Universidade Federal de Sergipe",
+    period: "2013 — 2018",
+  },
 ];
+
+/** Certificações. A seção só aparece se houver pelo menos um item. */
+export const certifications: Certification[] = [{ name: "Flutter Essencial" }];

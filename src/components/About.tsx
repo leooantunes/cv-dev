@@ -1,4 +1,4 @@
-import { profile, education } from "@/data/profile";
+import { profile, education, certifications } from "@/data/profile";
 import { SectionTitle } from "./SectionTitle";
 
 export function About() {
@@ -18,6 +18,26 @@ export function About() {
                   <li key={e.course + e.institution} className="text-base">
                     <span className="font-semibold text-fg">{e.course}</span>
                     <span className="text-muted"> — {e.institution} · {e.period}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {certifications.length > 0 && (
+            <div className="pt-2">
+              <h3 className="font-mono text-sm text-accent">## certificações</h3>
+              <ul className="mt-3 space-y-2">
+                {certifications.map((c) => (
+                  <li key={c.name} className="text-base">
+                    <span className="text-accent">✓</span>{" "}
+                    {c.url ? (
+                      <a href={c.url} target="_blank" rel="noreferrer" className="font-semibold text-fg hover:text-accent">
+                        {c.name}
+                      </a>
+                    ) : (
+                      <span className="font-semibold text-fg">{c.name}</span>
+                    )}
+                    {c.issuer && <span className="text-muted"> — {c.issuer}</span>}
                   </li>
                 ))}
               </ul>
@@ -48,10 +68,10 @@ export function About() {
                 {"  "}local: <S>&quot;{profile.location.split("—")[0].trim()}&quot;</S>,
               </Ln>
               <Ln n={5}>
-                {"  "}foco: [<S>&quot;UI&quot;</S>, <S>&quot;UX&quot;</S>, <S>&quot;performance&quot;</S>],
+                {"  "}foco: [<S>&quot;web&quot;</S>, <S>&quot;mobile&quot;</S>, <S>&quot;UX&quot;</S>, <S>&quot;performance&quot;</S>],
               </Ln>
               <Ln n={6}>
-                {"  "}aprendendo: <K>true</K>,
+                {"  "}experiencia: <S>&quot;{profile.yearsOfExperience} anos&quot;</S>,
               </Ln>
               <Ln n={7}>
                 {"  "}disponivel: <K>true</K>,

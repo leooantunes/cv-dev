@@ -1,4 +1,4 @@
-import { profile } from "@/data/profile";
+import { profile, experiences } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { TerminalTyping } from "./TerminalTyping";
 import { GithubIcon, LinkedinIcon } from "./Icons";
@@ -24,8 +24,8 @@ export function Hero() {
             {" />"}
           </p>
           <p className="mt-6 max-w-xl text-muted">
-            Construo interfaces modernas e performáticas com React, Next.js e React Native.
-            Direto de {profile.location.split("—")[0].trim()} para o mundo.
+            {profile.headline}. Construo interfaces modernas e performáticas com React, Next.js e
+            React Native, direto de {profile.location.split("—")[0].trim()} para o mundo.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -54,9 +54,9 @@ export function Hero() {
           </div>
 
           <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 font-mono">
+            <Stat value={profile.yearsOfExperience} label="anos de exp." />
             <Stat value={projects.length} label="projetos" />
             <Stat value={techs.size} label="tecnologias" />
-            <Stat value="∞" label="café" />
           </dl>
         </div>
 
@@ -72,6 +72,9 @@ export function Hero() {
               lines={[
                 { cmd: "whoami", output: [profile.name] },
                 { cmd: "cat cargo.txt", output: [profile.role] },
+                ...(experiences[0]
+                  ? [{ cmd: "cat empresa.txt", output: [`${experiences[0].role} @ ${experiences[0].company}`] }]
+                  : []),
                 { cmd: "echo $LOCAL", output: [profile.location] },
                 {
                   cmd: "ls ~/skills",
